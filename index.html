@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Protips</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" >
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsivo.css">
@@ -25,25 +26,16 @@
             <span></span>
           </a>
         </div>
-        <nav class="menu">
-          <ul id="menu">
+        <nav class="menu" id="menu">
+          <ul>
             <li class="menu__li">
-              <a href="#" class="menu__link">Home</a>
+              <a href="index.html" class="menu__link">Home</a>
             </li>
             <li class="menu__li">
-              <a href="#" class="menu__link">About</a>
+              <a href="news.html" class="menu__link">News</a>
             </li>
             <li class="menu__li">
-              <a href="#" class="menu__link">Pricing</a>
-            </li>
-            <li class="menu__li">
-              <a href="#" class="menu__link">Contact</a>
-            </li>
-            <li class="menu__li">
-              <a href="#" class="bt-sigin">Sign in</a>
-            </li>
-            <li class="menu__li">
-              <a href="#" class="bt-signup">Sign up</a>
+              <a href="contact.html" class="menu__link">Contact</a>
             </li>
           </ul>
         </nav>
@@ -392,54 +384,9 @@
     </main>
 
     <script type="text/javascript" src="js/swiper.min.js"></script>
-    <script type="text/javascript">
-      var mySwiper = new Swiper ('.swiper-container-testemunhas', {
-        pagination: {
-          el: '.swiper-pagination-testemunhas',
-          clickable: true,
-        },
-      });
+    <script type="text/javascript" src="js/home.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
 
-      var mySwiperPosts = new Swiper ('.swiper-container-posts', {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        pagination: {
-          el: '.swiper-pagination-posts',
-          clickable: true,
-        },
-        breakpoints: {
-          // when window width is >= 320px
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 20
-          },
-          // when window width is >= 480px
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 30
-          },
-          // when window width is >= 980px
-          980: {
-            slidesPerView: 3,
-            spaceBetween: 30
-          }
-        }
-      });
-
-      //-------
-      var btMenu = document.getElementById("menu-mobile");
-      var menu = document.getElementById("menu");
-
-      btMenu.addEventListener('click', function(e){
-        if (menu.style.display === 'flex') {
-          menu.style.display = 'none';
-        }else{
-          menu.style.display = 'flex';
-        }
-        e.preventDefault();
-      });
-
-    </script>
 
   </body>
 </html>

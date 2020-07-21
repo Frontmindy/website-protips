@@ -51,6 +51,10 @@ html, body{
 	font-family: 'Poppins', sans-serif;
 }
 
+img{
+	display: block;
+}
+
 .logomarca{
   width: 100px;
   height: 33px;
@@ -502,6 +506,11 @@ html, body{
 	color: #FF4F4F;
 }
 
+.post__content{
+	background: #ffffff;
+	padding-bottom: 10px;
+}
+
 .newsletter{
 	padding-top: 100px;
 }
@@ -585,6 +594,47 @@ html, body{
 	top: 7px;
 	border-left: 1px solid #ffffff;
 	padding-left: 10px;
+}
+
+.align-left{
+	text-align: left;
+}
+
+.col{
+	float: left;
+}
+
+.col--3{
+	width: 33.33%;
+}
+
+.p-15{
+	padding: 0 15px;
+}
+
+.mb-40{
+	margin-bottom: 40px;
+}
+
+.section-top-margin{
+	margin-top: 80px;
+}
+
+.pagination{
+	text-align: center;
+	padding-top: 50px;
+}
+
+.pagination__link{
+	text-decoration: none;
+	font-weight: 600;
+	padding: 0 15px;
+	color: #2F281E;
+}
+
+.pagination__link.ativo,
+.pagination__link:hover{
+		color: #FF4F4F;
 }
 
 .footer{

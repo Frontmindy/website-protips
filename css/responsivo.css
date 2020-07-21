@@ -91,7 +91,9 @@
   .footer__descricao{
     padding-right: 20px;
   }
-
+  .col--small-2{
+    width: 50%;
+  }
 
 }
 
@@ -192,6 +194,16 @@
     padding: 0 20px;
   }
 
+  .menu__li{
+    float: none;
+    text-align: center;
+  }
+
+  .menu__link{
+    font-size: 20px;
+    line-height: 22px;
+  }
+
   .apresentacao__descricao{
     width: 100%;
   }
@@ -253,6 +265,10 @@
 
   .bt-sigin{
   	margin-left: 0;
+  }
+
+  .col--mobile-1{
+    width: 100%;
   }
 
 }
