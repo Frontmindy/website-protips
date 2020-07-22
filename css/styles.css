@@ -51,10 +51,6 @@ html, body{
 	font-family: 'Poppins', sans-serif;
 }
 
-img{
-	display: block;
-}
-
 .logomarca{
   width: 100px;
   height: 33px;
@@ -492,6 +488,10 @@ img{
 	-moz-border-radius-topright: 8px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
+}
+
+.post__imagem img{
+	display: block;
 }
 
 .post__wrapper{
