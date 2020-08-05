@@ -5,9 +5,10 @@
     <title>Protips</title>
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/styles-news.css">
+    <link rel="stylesheet" href="css/styles-contact.css">
     <link rel="stylesheet" href="css/responsivo.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!--[if lt IE 9]>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
     <![endif]-->
@@ -44,31 +45,55 @@
       <section class="section-top-margin">
         <div class="center">
           <header class="p-15">
-            <h2 class="title align-left">Our Recent Post</h2>
-            <h5 class="subtitle align-left">Vampires The Romantic Ideology Behind Them</h5>
+            <h2 class="title align-left">Contact</h2>
           </header>
-          <div class="posts" id="posts">
-            <!-- <div class="col col--3 mb-40 col--small-2 col--mobile-1">
-              <div class="post-box">
-                <div class="post__wrapper">
-                  <a href="news-detail.html" class="post__link">
-                    <div class="post__imagem">
-                      <img src="imagens/post.png" alt="" class="img-responsiva">
+          <form class="form-contact">
+            <div class="col col--5 col--mobile-1">
+              <div class="p-15">
+                <div class="item-form mb-20">
+                  <span class="input-title">Name</span>
+                  <div class="input-item">
+                    <div class="input-item__box">
+                      <input type="text" name="" value="" class="input-item__input">
                     </div>
-                    <div class="post__content">
-                      <span class="post__title" id="titulo">Upgrading To Microsoft Windows Vista Tips</span>
-                      <p class="post__subtitle">By <strong id="autor">Abul Hasan Milon</strong> |  02 Feb 2019</p>
+                  </div>
+                </div>
+                <div class="item-form mb-20">
+                  <span class="input-title">Email</span>
+                  <div class="input-item">
+                    <div class="input-item__box">
+                      <input type="text" name="" value="" class="input-item__input">
                     </div>
-                  </a>
+                  </div>
+                </div>
+                <div class="item-form mb-20">
+                  <span class="input-title">Subject</span>
+                  <div class="input-item">
+                    <div class="input-item__box">
+                      <input type="text" name="" value="" class="input-item__input">
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div> -->
-          </div>
-        </div>
-        <div class="pagination">
-          <a class="pagination__link ativo" href="#">1</a>
-          <a class="pagination__link" href="#">2</a>
-          <a class="pagination__link" href="#">3</a>
+
+            </div>
+            <div class="col col--5 col--mobile-1">
+              <div class="p-15">
+                <div class="item-form mb-20">
+                  <span class="input-title">Message</span>
+                  <div class="input-item">
+                    <div class="input-item__box">
+                    <textarea name="name" rows="8" cols="80"  class="input-item__textarea"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+            <div class="tac mt-40">
+              <button type="submit" class="bt-red mh-160">Enviar</button>
+            </div>
+          </form>
         </div>
       </section>
 
@@ -140,72 +165,6 @@
     </main>
 
 
-  <script type="text/javascript" src="js/menu.js"></script>
-  <script type="text/javascript">
-    var posts = [
-      {
-        "imagem": "http://lorempixel.com/348/185/sports/1",
-        "titulo": "Um título",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019"
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/city/2",
-        "titulo": "Um título 2",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019"
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/people/2",
-        "titulo": "Um título 3",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019"
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/nature/2",
-        "titulo": "Um título 4",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019"
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/cats/2",
-        "titulo": "Um título 5",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019"
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/transport/2",
-        "titulo": "Um título 5",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019"
-      }
-    ];
-
-    var postsHtml = '';
-    for (var i = 0; i < posts.length; i++) {
-      var post = posts[i];
-      var html = '<div class="col col--3 mb-40 col--small-2 col--mobile-1">'+
-        '<div class="post-box">'+
-          '<div class="post__wrapper">'+
-            '<a href="news-detail.html" class="post__link">'+
-              '<div class="post__imagem">'+
-                '<img src="'+post.imagem+'" alt="" class="img-responsiva">'+
-              '</div>'+
-              '<div class="post__content">'+
-                '<span class="post__title" id="titulo">'+post.titulo+'</span>'+
-                '<p class="post__subtitle">By <strong id="autor">'+post.autor+'</strong> |  '+post.data+'</p>'+
-              '</div>'+
-            '</a>'+
-          '</div>'+
-        '</div>'+
-      '</div>';
-      postsHtml += html;
-    }
-
-    postsHtml += '<div class="clear"></div>';
-
-    document.getElementById("posts").innerHTML = postsHtml;
-
-  </script>
+<script type="text/javascript" src="js/menu.js"></script>
   </body>
 </html>

@@ -51,6 +51,10 @@ html, body{
 	font-family: 'Poppins', sans-serif;
 }
 
+.tac{
+	text-align: center;
+}
+
 .logomarca{
   width: 100px;
   height: 33px;
@@ -168,6 +172,8 @@ html, body{
 	padding: 15px 30px;
 	border-radius: 4px;
 	display: inline-block;
+	border: none;
+	cursor: pointer;
 }
 
 .bt-red:hover{
@@ -608,12 +614,28 @@ html, body{
 	width: 33.33%;
 }
 
+.col--5{
+	width: 50%;
+}
+
 .p-15{
 	padding: 0 15px;
 }
 
 .mb-40{
 	margin-bottom: 40px;
+}
+
+.mb-20{
+	margin-bottom: 20px;
+}
+
+.mt-40{
+	margin-top: 40px;
+}
+
+.mh-160{
+	min-width: 160px;
 }
 
 .section-top-margin{
