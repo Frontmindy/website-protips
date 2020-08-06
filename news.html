@@ -65,10 +65,8 @@
             </div> -->
           </div>
         </div>
-        <div class="pagination">
-          <a class="pagination__link ativo" href="#">1</a>
-          <a class="pagination__link" href="#">2</a>
-          <a class="pagination__link" href="#">3</a>
+        <div class="pagination" id="pagination">
+
         </div>
       </section>
 
@@ -147,43 +145,139 @@
         "imagem": "http://lorempixel.com/348/185/sports/1",
         "titulo": "Um título",
         "autor": "José Otavio",
-        "data": "02 Fev 2019"
+        "data": "02 Fev 2019",
+        "id": 1
       },
       {
         "imagem": "http://lorempixel.com/348/185/city/2",
         "titulo": "Um título 2",
         "autor": "José Otavio",
-        "data": "02 Fev 2019"
+        "data": "02 Fev 2019",
+        "id": 2
       },
       {
         "imagem": "http://lorempixel.com/348/185/people/2",
         "titulo": "Um título 3",
         "autor": "José Otavio",
-        "data": "02 Fev 2019"
+        "data": "02 Fev 2019",
+        "id": 3
       },
       {
         "imagem": "http://lorempixel.com/348/185/nature/2",
         "titulo": "Um título 4",
         "autor": "José Otavio",
-        "data": "02 Fev 2019"
+        "data": "02 Fev 2019",
+        "id": 4
       },
       {
         "imagem": "http://lorempixel.com/348/185/cats/2",
         "titulo": "Um título 5",
         "autor": "José Otavio",
-        "data": "02 Fev 2019"
+        "data": "02 Fev 2019",
+        "id": 5
       },
       {
         "imagem": "http://lorempixel.com/348/185/transport/2",
         "titulo": "Um título 5",
         "autor": "José Otavio",
-        "data": "02 Fev 2019"
+        "data": "02 Fev 2019",
+        "id": 6
+      },
+      {
+        "imagem": "http://lorempixel.com/348/185/transport/3",
+        "titulo": "Um título 5",
+        "autor": "José Otavio",
+        "data": "02 Fev 2019",
+        "id": 6
+      },
+      {
+        "imagem": "http://lorempixel.com/348/185/transport/4",
+        "titulo": "Um título 5",
+        "autor": "José Otavio",
+        "data": "02 Fev 2019",
+        "id": 6
+      },
+      {
+        "imagem": "http://lorempixel.com/348/185/transport/5",
+        "titulo": "Um título 5",
+        "autor": "José Otavio",
+        "data": "02 Fev 2019",
+        "id": 6
+      },
+      {
+        "imagem": "http://lorempixel.com/348/185/transport/6",
+        "titulo": "Um título 5",
+        "autor": "José Otavio",
+        "data": "02 Fev 2019",
+        "id": 6
+      },
+      {
+        "imagem": "http://lorempixel.com/348/185/transport/7",
+        "titulo": "Um título 5",
+        "autor": "José Otavio",
+        "data": "02 Fev 2019",
+        "id": 6
+      },
+      {
+        "imagem": "http://lorempixel.com/348/185/transport/8",
+        "titulo": "Um título 5",
+        "autor": "José Otavio",
+        "data": "02 Fev 2019",
+        "id": 6
       }
     ];
 
+    //  ------------------------------------------
+    //  paginação
+    function pagination (page, total, limit) {
+      var pageSize = Math.ceil(total/limit);
+
+      var _pagination = {
+          page: page,
+          total: total,
+          limit: limit,
+          pages: pageSize
+        };
+
+      if(page > 1){
+        var prev = page-1;
+        _pagination.previous = prev;
+      }
+
+      var remaining = total - (page * limit);
+
+      if(remaining > 0){
+        _pagination.next = page+1;
+      }
+
+      return _pagination;
+    }
+
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+      function(m,key,value) {
+        vars[key] = value;
+      });
+      return vars;
+    }
+
+    var array = posts;
+    var pageQuery = getUrlVars()["pagina"];
+
+    var page = parseInt(pageQuery) || 1;
+    var limit = 6;
+    var offset = (page - 1) * limit;
+    var total = array.length;
+    var items = array.slice(offset, offset+limit);
+    var paginationResult = pagination(page, total, limit);
+    // console.log(items);
+    // console.log(pagination(page, total, limit));
+
+    //-------------
     var postsHtml = '';
-    for (var i = 0; i < posts.length; i++) {
-      var post = posts[i];
+    for (var i = 0; i < items.length; i++) {
+      var post = items[i];
       var html = '<div class="col col--3 mb-40 col--small-2 col--mobile-1">'+
         '<div class="post-box">'+
           '<div class="post__wrapper">'+
@@ -205,6 +299,19 @@
     postsHtml += '<div class="clear"></div>';
 
     document.getElementById("posts").innerHTML = postsHtml;
+
+    if (pageQuery > paginationResult.pages) {
+      document.getElementById("posts").innerHTML = "Nenhum item encontrado";
+    }
+
+    //----------
+    var paginationItems = '';
+    for (var i = 0; i < paginationResult.pages; i++) {
+      var paginaAtiva = i+1;
+      var ativo = page === paginaAtiva ? 'ativo' : '';
+      paginationItems += '<a class="pagination__link '+ativo+'" href="news.html?pagina='+paginaAtiva+'">'+paginaAtiva+'</a>';
+    }
+    document.getElementById('pagination').innerHTML = paginationItems;
 
   </script>
   </body>
