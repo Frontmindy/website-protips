@@ -15,7 +15,7 @@
   <body>
     <main class="apresentacao">
       <div class="center">
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
           <i class="logomarca"></i>
         </a>
         <div class="">
@@ -139,94 +139,9 @@
 
 
   <script type="text/javascript" src="js/menu.js"></script>
+  <script type="text/javascript" src="js/posts.js"></script>
+  <script type="text/javascript" src="js/getUrlVars.js"></script>
   <script type="text/javascript">
-    var posts = [
-      {
-        "imagem": "http://lorempixel.com/348/185/sports/1",
-        "titulo": "Um título",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 1
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/city/2",
-        "titulo": "Um título 2",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 2
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/people/2",
-        "titulo": "Um título 3",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 3
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/nature/2",
-        "titulo": "Um título 4",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 4
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/cats/2",
-        "titulo": "Um título 5",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 5
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/transport/2",
-        "titulo": "Um título 5",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 6
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/transport/3",
-        "titulo": "Um título 5",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 6
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/transport/4",
-        "titulo": "Um título 5",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 6
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/transport/5",
-        "titulo": "Um título 5",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 6
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/transport/6",
-        "titulo": "Um título 5",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 6
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/transport/7",
-        "titulo": "Um título 5",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 6
-      },
-      {
-        "imagem": "http://lorempixel.com/348/185/transport/8",
-        "titulo": "Um título 5",
-        "autor": "José Otavio",
-        "data": "02 Fev 2019",
-        "id": 6
-      }
-    ];
-
     //  ------------------------------------------
     //  paginação
     function pagination (page, total, limit) {
@@ -253,15 +168,6 @@
       return _pagination;
     }
 
-    function getUrlVars() {
-      var vars = {};
-      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
-      function(m,key,value) {
-        vars[key] = value;
-      });
-      return vars;
-    }
-
     var array = posts;
     var pageQuery = getUrlVars()["pagina"];
 
@@ -281,7 +187,7 @@
       var html = '<div class="col col--3 mb-40 col--small-2 col--mobile-1">'+
         '<div class="post-box">'+
           '<div class="post__wrapper">'+
-            '<a href="news-detail.html" class="post__link">'+
+            '<a href="news-detail.html?id='+(i+1)+'" class="post__link">'+
               '<div class="post__imagem">'+
                 '<img src="'+post.imagem+'" alt="" class="img-responsiva">'+
               '</div>'+

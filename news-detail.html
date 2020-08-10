@@ -16,7 +16,7 @@
   <body>
     <main class="apresentacao">
       <div class="center">
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
           <i class="logomarca"></i>
         </a>
         <div class="">
@@ -44,25 +44,22 @@
 
       <section class="section-top-margin">
         <div class="center">
-          <header class="p-15">
+          <!-- <header class="p-15">
             <h2 class="title align-left">Our Recent Post</h2>
             <h5 class="subtitle align-left">Vampires The Romantic Ideology Behind Them</h5>
-          </header>
+          </header> -->
           <div class="post-detail">
             <div class="post-detail__img-box">
-              <img src="imagens/post.jpg" alt="" class="img-responsiva">
+              <img id="imagem" src="" alt="" class="img-responsiva">
             </div>
             <div class="post__box">
-              <h2 class="post__title">Upgrading To Microsoft Windows Vista Tips</h2>
-              <p class="post__subtitle">By <strong>Abul Hasan Milon</strong> |  02 Feb 2019</p>
+              <h2 class="post__title" id="titulo"></h2>
+              <p class="post__subtitle">By <strong id="autor"></strong> |  <span id="data"></span></p>
               <div class="post__text">
-                <p class="mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a convallis tellus. Maecenas vel velit nec urna auctor iaculis vitae ut neque. Integer mollis eros vestibulum lacus accumsan, non vestibulum odio hendrerit. Sed volutpat sem vitae libero commodo, aliquet convallis tellus viverra. Nulla molestie faucibus erat sit amet semper. In hac habitasse platea dictumst. Donec eget neque non elit lobortis efficitur. Nunc vitae neque sollicitudin enim faucibus mattis ut ut tellus.</p>
-  <p class="mb-40">Nulla facilisi. Vivamus euismod pharetra viverra. Donec venenatis ut libero vitae dapibus. Vivamus elementum velit vitae diam ultricies, non hendrerit orci laoreet. Nulla malesuada lectus sit amet rutrum laoreet. Integer non pulvinar leo. Ut eu imperdiet felis, ut tempus massa. Vivamus vehicula nibh ut tortor facilisis rutrum. Vivamus scelerisque vitae elit ac efficitur. Nulla vel tortor mi. In hac habitasse platea dictumst. Maecenas at auctor tortor, vel placerat velit. Curabitur quis sagittis tortor, at vulputate metus.</p>
-
-  <p class="mb-40">Ut nisl ex, sagittis a euismod sit amet, scelerisque in lectus. Donec et quam id diam finibus volutpat quis sed tellus. Vestibulum pharetra accumsan sem, non faucibus nulla bibendum quis. In felis odio, molestie vel maximus nec, convallis sed dolor. Aenean at eleifend est. Pellentesque euismod ipsum non scelerisque condimentum. Morbi vel dapibus enim. Pellentesque rutrum ac ex a elementum. Duis ut nisl neque. Etiam ut massa egestas, auctor justo eu, suscipit est. Etiam nec urna nunc. Phasellus in ex pharetra, euismod nisl eget, vestibulum sapien. Phasellus id justo ante.</p>
+                <p class="mb-40" id="texto"></p>
               </div>
-              <div class="post__video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/yIO_7K4-JjU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div class="post__video" id="box-video">
+
               </div>
 
             </div>
@@ -138,6 +135,29 @@
     </main>
 
 
-<script type="text/javascript" src="js/menu.js"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+  <script type="text/javascript" src="js/posts.js"></script>
+  <script type="text/javascript" src="js/getUrlVars.js"></script>
+  <script type="text/javascript">
+    var id = getUrlVars()["id"];
+    id = id - 1;
+
+    var post = posts[id];
+
+    document.getElementById('titulo').innerHTML = post.titulo;
+    document.getElementById('autor').innerHTML = post.autor;
+    document.getElementById('data').innerHTML = post.data;
+    document.getElementById('imagem').src = post.imagem_post;
+    document.getElementById('texto').innerHTML = post.texto;
+
+
+    if (post.video) {
+      var videoHTML = '<iframe id="video" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      document.getElementById('box-video').innerHTML = videoHTML;
+    }
+
+
+
+  </script>
   </body>
 </html>

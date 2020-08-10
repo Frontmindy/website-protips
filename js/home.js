@@ -1,3 +1,26 @@
+var postsHtml = '';
+
+for (var i = 0; i < 5; i++) {
+  var post = posts[i];
+  var html = '<div class="swiper-slide">'+
+    '<div class="post-box">'+
+      '<div class="post__wrapper">'+
+        '<a href="news-detail.html?id='+(i+1)+'" class="post__link">'+
+          '<div class="post__imagem">'+
+            '<img src="'+post.imagem+'" alt="" class="img-responsiva">'+
+          '</div>'+
+          '<span class="post__title">'+post.titulo+'</span>'+
+          '<p class="post__subtitle">By <strong>'+post.autor+'</strong> |  '+post.data+'</p>'+
+        '</a>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+  postsHtml += html;
+}
+
+document.getElementById('posts-slider').innerHTML = postsHtml;
+
+
 var mySwiper = new Swiper ('.swiper-container-testemunhas', {
   pagination: {
     el: '.swiper-pagination-testemunhas',
